@@ -2,14 +2,13 @@
 const container = document.getElementById("container");
 console.log("Ciao");
 
-
 //const button easy
 const buttonEasy = document.getElementById("button-easy");
 console.log(buttonEasy);
 
-//const button medium
-const buttonMedium = document.getElementById("button-medium");
-console.log(buttonMedium);
+//cost Array Numeri Random
+const numeriArray= generaOrdineNumeroRandom(1, 16);
+console.log(numeriArray);
 
 //create click button easy
 buttonEasy.addEventListener("click", creaGrigliaEasy);
@@ -34,6 +33,8 @@ buttonEasy.addEventListener("click", creaGrigliaEasy);
         }
     }
 
+ 
+
     //Create new element
     function createNewCol(tagToAdd , classToAdd) {
         const newCol = document.createElement(tagToAdd);
@@ -41,10 +42,24 @@ buttonEasy.addEventListener("click", creaGrigliaEasy);
         return newCol;
     }
     
+
+    //create order random number
+    function generaOrdineNumeroRandom(min, max) {
+        const numeriArrayRandom = [];
+      
+        while(numeriArrayRandom.length < max) {
+              //Creare numero casuale nel min e max
+            const nuovoNum = generaNumeroRandom(min,max);
+            if(!numeriArrayRandom.includes(nuovoNum)) {
+                numeriArrayRandom.push(nuovoNum);
+            }
+        }
+        return numeriArrayRandom;
+    }
+
     //create random number
     function generaNumeroRandom(min , max) {
-        const numeroRandom =  Math.floor(Math.random() * (max - min)) + min;
-        return numeroRandom;
+        return Math.floor(Math.random() * (max - min + 1) + min);
     }
 
 
