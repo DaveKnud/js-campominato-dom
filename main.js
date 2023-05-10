@@ -13,6 +13,10 @@ console.log(numeriArray);
 //create click button easy
 buttonEasy.addEventListener("click", creaGrigliaEasy);
 
+
+    
+
+
 //FUNZIONI
 
     //Crea Griglia easy 
@@ -20,14 +24,26 @@ buttonEasy.addEventListener("click", creaGrigliaEasy);
     buttonEasy.classList.add("inactive");
     
     for (let i = 1; i < 101; i++){
+
+            //creo nuova colonna 
             const newSquare = createNewCol ("div","square");
             container.append(newSquare);
-    
+            console.log(i);
+            newSquare.append(i);
+
+           //Inserendo array numeri random nelle celle
+            for (let i = 1; i < numeriArray.length; i++) {
+                if(newSquare === i) {
+                    newSquare.append(i);
+                    newSquare.classList.add("bomb");
+                }
+            }
+
+        
+            //aggiungo un evento click ad ogni colonna
             newSquare.addEventListener("click",
                 function(){
                     newSquare.classList.add("blue-square");
-                    console.log(i);
-                    newSquare.append(i);
                 }
             )
         }
