@@ -1,0 +1,34 @@
+*{margin: 0;
+padding: 0;
+box-sizing: border-box;}
+
+html{
+    background-color: #7FFFD4;
+}
+
+.inactive{
+    display: none;
+}
+
+#container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 20px;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.square{
+    width: 10%;
+    height: 70px;
+    border: 2px solid black;
+}
+
+.blue-square{
+background-color:rgb(17, 0, 255);
+color:white;
+width: 10%;
+height: 70px;
+border: 2px solid black;
+}
